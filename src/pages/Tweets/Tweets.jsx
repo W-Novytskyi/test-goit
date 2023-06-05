@@ -27,16 +27,6 @@ const Tweets = () => {
 
   const BASE_URL = 'https://647c6f74c0bae2880ad0b04c.mockapi.io';
 
-  // const updateUsers = async (id, followers) => {
-  //   try {
-  //     const response = await axios.put(`${BASE_URL}/users/${id}`, followers);
-  //     return response.data;
-  //   } catch (error) {
-  //     console.error(error);
-  //     throw error;
-  //   }
-  // };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -47,7 +37,6 @@ const Tweets = () => {
         setItemList(prevState => (page === 1 ? data : [...prevState, ...data]));
         if (data.length === 0) {
           setCanLoadMore(false);
-          // alert('Sorry, no more data.');
         }
       } catch (error) {
         console.error(error);
@@ -69,10 +58,6 @@ const Tweets = () => {
         return [...prevState, id];
       }
     });
-  };
-
-  const isFollowing = id => {
-    return following.includes(id);
   };
 
   const loadMore = () => setPage(prevPage => prevPage + 1);
