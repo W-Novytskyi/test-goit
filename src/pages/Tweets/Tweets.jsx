@@ -20,7 +20,10 @@ const Tweets = () => {
   const [page, setPage] = useState(1);
   const [canLoadMore, setCanLoadMore] = useState(true);
 
-  //   const [following, setFollowing] = useState(false);
+  const [following, setFollowing] = useState(() => {
+    const storedFollowing = localStorage.getItem('following');
+    return storedFollowing ? JSON.parse(storedFollowing) : [];
+  });
 
   const BASE_URL = 'https://647c6f74c0bae2880ad0b04c.mockapi.io';
 
@@ -54,6 +57,24 @@ const Tweets = () => {
     fetchData();
   }, [page]);
 
+  useEffect(() => {
+    localStorage.setItem('following', JSON.stringify(following));
+  }, [following]);
+
+  const handleFollow = id => {
+    setFollowing(prevState => {
+      if (prevState.includes(id)) {
+        return prevState.filter(followedId => followedId !== id);
+      } else {
+        return [...prevState, id];
+      }
+    });
+  };
+
+  const isFollowing = id => {
+    return following.includes(id);
+  };
+
   const loadMore = () => setPage(prevPage => prevPage + 1);
 
   return (
@@ -79,7 +100,12 @@ const Tweets = () => {
               <ItemFollowers>
                 {followers.toLocaleString('en-US')} FOLLOWERS
               </ItemFollowers>
-              <Button type="button">FOLLOW</Button>
+              <Button
+                following={following.includes(id)}
+                onClick={() => handleFollow(id)}
+              >
+                {following.includes(id) ? 'FOLLOWING' : 'FOLLOW'}
+              </Button>
             </Card>
           ))}
         </Wrapper>
