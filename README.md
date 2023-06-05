@@ -1,50 +1,49 @@
 # **test-goit**
 
-Це проект, що використовує **React** та маршрутизацію для створення сторінок
-**_Home_** та **_Tweets_**.
+This is a project that utilizes **React** and routing to create the **_Home_**
+and **_Tweets_** pages.
 
-# Залежності
+# Dependencies
 
-У проекті використовуються наступні залежності:
+The project uses the following dependencies:
 
 - React
 - React Router DOM
 - Axios
 - Emotion (emotion/react та emotion/styled)
 
-# Установка
+# Installation
 
-1. Склонуйте репозиторій за допомогою команди: git clone <URL репозиторію>
+1. Clone the repository using the command: `git clone <repository URL>`
 
-2. Перейдіть до папки проекту: cd test-goit
+2. Navigate to the project folder: `cd test-goit`
 
-3. Встановіть залежності: npm install
+3. Install the dependencies: `npm install`
 
-# Використання
+# Usage
 
-1. Запустіть проект: npm start
+1. Start the project: `npm start`
 
-2. Відкрийте веб-браузер та перейдіть за посиланням _http://localhost:3000_, щоб
-   переглянути додаток.
+2. Open a web browser and go to _http://localhost:3000_ to view the application.
 
-# Опис
+# Description
 
-Цей проект має дві сторінки:
+This project consists of two pages:
 
-**Home** На сторінці Home Вам запропонують перейти за посиланням на сторінку
-Tweets.
+**Home:** On the Home page, you will be provided with a link to navigate to the
+Tweets page.
 
-**Tweets** На сторінці Tweets відображається список карток з інформацією про
-користувачів. Кожна картка містить кількість твітів, фоловерів та зображення
-користувача. Також на кожній картці присутня кнопка "Follow", яку можна
-натиснути, щоб підписатись на користувача.
+**Tweets:** The Tweets page displays a list of cards containing information
+about users. Each card includes the number of tweets, followers, and a user
+image. Additionally, each card has a "Follow" button that can be clicked to
+follow the user.
 
-**Load More** На сторінці Tweets є також кнопка "Load More", яка дозволяє
-завантажити додаткові картки з інформацією про користувачів.
+**Load More:** The Tweets page also features a "Load More" button that allows
+you to load additional cards with user information
 
-Більш детальну інформацію про проект, його функціональність та використання
-можна знайти у вихідному коді проекту.
+For more detailed information about the project, its functionality, and usage,
+refer to the project's source code.
 
-# Автор
+# Author
 
-В'ячеслав Новицький (*https://github.com/W-Novytskyi*)
+Vyacheslav Novytskyi (*https://github.com/W-Novytskyi*)
